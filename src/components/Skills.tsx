@@ -78,17 +78,13 @@ export default function Skills({ darkMode }: SkillsProps) {
               }`}
             >
               <div className="flex justify-center mb-3">
-                <div className="p-2 rounded-full border-2 gold-border">
-                  <img
-                    src={`https://cdn.simpleicons.org/${skill.icon}/${
-                      darkMode ? "ffffff" : "000000"
-                    }`}
-                    alt={skill.name}
-                    width="40"
-                    height="40"
-                    className="transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
+                <img
+                  src={`https://cdn.simpleicons.org/${skill.icon}/d4af37`}
+                  alt={skill.name}
+                  width="40"
+                  height="40"
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               <p
                 className={`text-sm font-medium ${
