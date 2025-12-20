@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ExternalLink,
   Github,
@@ -99,7 +98,11 @@ export default function Projects({ darkMode }: ProjectsProps) {
           >
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <div
+            className={`w-24 h-1 mx-auto mb-4 ${
+              darkMode ? "bg-white" : "bg-black"
+            }`}
+          ></div>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               darkMode ? "text-gray-300" : "text-gray-600"
@@ -126,9 +129,9 @@ export default function Projects({ darkMode }: ProjectsProps) {
                   src={project.image}
                   alt={project.title}
                   className={`w-full h-48 object-cover transition-transform hover:scale-110 ${
-                    project.imageVariant === 'mono'
-                      ? 'grayscale contrast-125 brightness-110'
-                      : ''
+                    project.imageVariant === "mono"
+                      ? "grayscale contrast-125 brightness-110"
+                      : ""
                   }`}
                 />
                 <div className="absolute top-4 left-4">
@@ -181,7 +184,11 @@ export default function Projects({ darkMode }: ProjectsProps) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                    className={`flex items-center gap-1 px-4 py-2 text-sm rounded-lg transition-colors ${
+                      darkMode
+                        ? "bg-white text-black hover:bg-gray-100"
+                        : "bg-black text-white hover:bg-gray-900"
+                    }`}
                   >
                     <Github size={16} />
                     GitHub Repo

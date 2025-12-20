@@ -83,7 +83,11 @@ export default function Contact({ darkMode }: ContactProps) {
           >
             Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <div
+            className={`w-24 h-1 mx-auto mb-4 ${
+              darkMode ? "bg-white" : "bg-black"
+            }`}
+          ></div>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               darkMode ? "text-gray-300" : "text-gray-600"
@@ -109,8 +113,15 @@ export default function Contact({ darkMode }: ContactProps) {
                       : "bg-gray-50 hover:bg-gray-100"
                   }`}
                 >
-                  <div className="p-3 bg-blue-600 rounded-lg mr-4">
-                    <info.icon size={20} className="text-white" />
+                  <div
+                    className={`p-3 rounded-lg mr-4 ${
+                      darkMode ? "bg-white" : "bg-black"
+                    }`}
+                  >
+                    <info.icon
+                      size={20}
+                      className={darkMode ? "text-black" : "text-white"}
+                    />
                   </div>
                   <div>
                     <h4
@@ -164,7 +175,7 @@ export default function Contact({ darkMode }: ContactProps) {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors ${
                       darkMode
                         ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
                         : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
@@ -186,7 +197,7 @@ export default function Contact({ darkMode }: ContactProps) {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                    className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors ${
                       darkMode
                         ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
                         : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
@@ -208,7 +219,7 @@ export default function Contact({ darkMode }: ContactProps) {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors ${
                     darkMode
                       ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
@@ -230,7 +241,7 @@ export default function Contact({ darkMode }: ContactProps) {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none ${
+                  className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-colors resize-none ${
                     darkMode
                       ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
@@ -240,7 +251,11 @@ export default function Contact({ darkMode }: ContactProps) {
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                className={`w-full px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
+                  darkMode
+                    ? "bg-white text-black hover:bg-gray-100"
+                    : "bg-black text-white hover:bg-gray-900"
+                }`}
               >
                 <Send size={20} />
                 Send Message

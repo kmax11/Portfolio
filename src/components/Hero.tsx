@@ -38,7 +38,10 @@ export default function Hero({ darkMode }: HeroProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Hi, I'm <span className="text-blue-600">Kidus</span>
+            Hi, I'm{" "}
+            <span className={darkMode ? "text-white" : "text-black"}>
+              Kidus
+            </span>
           </h1>
           <div className="h-16 flex items-center justify-center md:justify-start">
             <p
@@ -50,7 +53,9 @@ export default function Hero({ darkMode }: HeroProps) {
               <span className="relative inline-flex h-8 md:h-9 w-auto">
                 <span
                   key={currentRole}
-                  className="animate-slideUp text-blue-500"
+                  className={`animate-slideUp ${
+                    darkMode ? "text-white" : "text-black"
+                  }`}
                   style={
                     {
                       display: "inline-block",
@@ -67,7 +72,11 @@ export default function Hero({ darkMode }: HeroProps) {
           <div className="flex gap-4 mt-6">
             <a
               href="#contact"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className={`px-8 py-3 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
+                darkMode
+                  ? "bg-white text-black hover:bg-gray-100"
+                  : "bg-black text-white hover:bg-gray-900"
+              }`}
             >
               Get In Touch
             </a>
@@ -76,8 +85,10 @@ export default function Hero({ darkMode }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               download
-              className={`px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors flex items-center gap-2 ${
-                darkMode ? "hover:bg-blue-600" : ""
+              className={`px-8 py-3 border-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
+                darkMode
+                  ? "border-white text-white hover:bg-white hover:text-black"
+                  : "border-black text-black hover:bg-black hover:text-white"
               }`}
             >
               <span>
@@ -140,17 +151,43 @@ export default function Hero({ darkMode }: HeroProps) {
           <div className="relative overflow-hidden w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 shrink-0">
             {/* Floating Particles with Different Colors */}
             <div className="absolute inset-0 pointer-events-none">
-              <span className="absolute top-10 left-24 w-4 h-4 bg-blue-400 rounded-full opacity-40 animate-float"></span>
-              <span className="absolute bottom-16 right-24 w-3 h-3 bg-pink-400 rounded-full opacity-30 animate-float-fast"></span>
-              <span className="absolute top-1/2 left-8 w-2 h-2 bg-yellow-300 rounded-full opacity-20 animate-float-slow"></span>
-              <span className="absolute top-20 right-16 w-5 h-5 bg-green-400 rounded-full opacity-30 animate-float"></span>
-              <span className="absolute bottom-24 left-16 w-3 h-3 bg-purple-400 rounded-full opacity-30 animate-float-fast"></span>
-              <span className="absolute top-32 left-1/2 w-4 h-4 bg-red-400 rounded-full opacity-30 animate-float-slow"></span>
+              <span
+                className={`absolute top-10 left-24 w-4 h-4 rounded-full opacity-30 animate-float ${
+                  darkMode ? "bg-white/20" : "bg-black/10"
+                }`}
+              ></span>
+              <span
+                className={`absolute bottom-16 right-24 w-3 h-3 rounded-full opacity-25 animate-float-fast ${
+                  darkMode ? "bg-white/15" : "bg-black/10"
+                }`}
+              ></span>
+              <span
+                className={`absolute top-1/2 left-8 w-2 h-2 rounded-full opacity-20 animate-float-slow ${
+                  darkMode ? "bg-white/15" : "bg-black/10"
+                }`}
+              ></span>
+              <span
+                className={`absolute top-20 right-16 w-5 h-5 rounded-full opacity-25 animate-float ${
+                  darkMode ? "bg-white/15" : "bg-black/10"
+                }`}
+              ></span>
+              <span
+                className={`absolute bottom-24 left-16 w-3 h-3 rounded-full opacity-25 animate-float-fast ${
+                  darkMode ? "bg-white/20" : "bg-black/10"
+                }`}
+              ></span>
+              <span
+                className={`absolute top-32 left-1/2 w-4 h-4 rounded-full opacity-25 animate-float-slow ${
+                  darkMode ? "bg-white/15" : "bg-black/10"
+                }`}
+              ></span>
             </div>
             <img
               src="/20250623_113336.jpg"
               alt="Profile"
-              className="w-full h-full rounded-full border-4 border-blue-300 object-cover shadow-xl relative z-10 transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              className={`w-full h-full rounded-full border-4 object-cover shadow-xl relative z-10 transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${
+                darkMode ? "border-white/30" : "border-black/20"
+              }`}
               style={{ background: darkMode ? "#111" : "#fff" }}
             />
           </div>

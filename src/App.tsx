@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     // Check for saved theme preference or default to system preference
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = true; // Default to dark mode
     
     if (savedTheme === 'dark' || !savedTheme) {
       setDarkMode(true);
