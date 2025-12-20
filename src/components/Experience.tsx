@@ -27,24 +27,23 @@ export default function Experience({ darkMode }: ExperienceProps) {
       title: 'CBS Trainee',
       company: 'Huawei',
       location: 'Ethiopia',
-      period: 'Feb 2024 – May 2024',
-      description: [
-        'Worked on backend development and service optimization using Django framework',
-        'Collaborated with cross-functional teams to improve service delivery, achieving 30% reduction in response time',
-        'Gained hands-on experience with telecom service logic and system debugging',
-        'Participated in code reviews and contributed to best practices documentation'
-      ],
-      technologies: ['Django', 'REST APIs', 'Team Collaboration', 'Debugging', 'Telecom Service Logic'],
+      period: 'Feb 2023 – May 2023',
+description: [
+  'Supported CBS domain operations by assisting in business analysis, project tracking, and customer relationship coordination.',
+  'Gained hands-on experience in telecom business processes, CRM systems, and digital transformation projects.',
+  'Collaborated with cross-functional teams to improve service delivery, resulting in a 30% reduction in response times and a 20% increase in customer satisfaction.'
+],
+      technologies: ['GuassDB', 'REST APIs', 'Team Collaboration', 'Debugging', 'Telecom Service Logic'],
       type: 'Internship'
     },
     {
       title: 'Freelance Developer',
       company: 'Self-Employed',
       location: 'Remote',
-      period: '2023 – Present',
+      period: '2024 – Present',
       description: [
         'Developing web and mobile applications for various clients using modern technologies',
-        'Building eCommerce platforms with secure payment integration using Chapa',
+        'Building Ecommerce platforms with secure payment integration using Chapa',
         'Creating mobile applications with Flutter for tourism and transport sectors',
         'Maintaining and optimizing existing applications for better performance'
       ],

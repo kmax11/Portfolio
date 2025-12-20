@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useState } from "react";
+import { Mail, MapPin, Send, Github } from "lucide-react";
 
 interface ContactProps {
   darkMode: boolean;
@@ -7,173 +7,155 @@ interface ContactProps {
 
 export default function Contact({ darkMode }: ContactProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || 'Contact from Portfolio');
+    const subject = encodeURIComponent(
+      formData.subject || "Contact from Portfolio"
+    );
     const body = encodeURIComponent(
       `Hi Kidus,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
     const mailtoLink = `mailto:kidusasrat10@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
+
+    // Trigger mail client in a user-gesture friendly way
+    const link = document.createElement("a");
+    link.href = mailtoLink;
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Fallback for browsers that ignore programmatic anchor clicks
     window.location.href = mailtoLink;
-    
+
     // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      value: 'kidusasrat10@gmail.com',
-      link: 'mailto:kidusasrat10@gmail.com'
+      title: "Email",
+      value: "kidusasrat10@gmail.com",
+      link: "mailto:kidusasrat10@gmail.com",
     },
     {
       icon: Github,
-      title: 'GitHub',
-      value: 'github.com/kmax11',
-      link: 'https://github.com/kmax11'
+      title: "GitHub",
+      value: "github.com/kmax11",
+      link: "https://github.com/kmax11",
     },
     {
       icon: MapPin,
-      title: 'Location',
-      value: 'Addis Ababa,Ethiopia',
-      link: '#'
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: Github,
-      name: 'GitHub',
-      url: 'https://github.com/kmax11',
-      color: 'hover:text-gray-900'
+      title: "Location",
+      value: "Addis Ababa,Ethiopia",
+      link: "#",
     },
-    {
-      icon: Linkedin,
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/kidus-asrat-95b176362',
-      color: 'hover:text-blue-600'
-    },
-    {
-      icon: Mail,
-      name: 'Twitter',
-      url: 'https://twitter.com/kmax78555',
-      color: 'hover:text-blue-400'
-    }
   ];
 
   return (
-    <section id="contact" className={`py-20 ${
-      darkMode ? 'bg-black' : 'bg-white'
-    }`}>
+    <section
+      id="contact"
+      className={`py-20 ${darkMode ? "bg-black" : "bg-white"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className={`text-4xl font-bold mb-4 ${
-            darkMode ? 'text-white' : 'text-black'
-          }`}>
+          <h2
+            className={`text-4xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
             Get In Touch
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className={`text-lg max-w-2xl mx-auto ${
-            darkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-            I'm always open to discussing new opportunities, interesting projects, 
-            or just having a chat about technology. Feel free to reach out!
+          <p
+            className={`text-lg max-w-2xl mx-auto ${
+              darkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            I'm always open to discussing new opportunities, interesting
+            projects, or just having a chat about technology. Feel free to reach
+            out!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-           
-
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <a
                   key={index}
                   href={info.link}
                   className={`flex items-center p-4 rounded-lg transition-colors ${
-                    darkMode 
-                      ? 'bg-gray-700 hover:bg-gray-600' 
-                      : 'bg-gray-50 hover:bg-gray-100'
+                    darkMode
+                      ? "bg-gray-700 hover:bg-gray-600"
+                      : "bg-gray-50 hover:bg-gray-100"
                   }`}
                 >
                   <div className="p-3 bg-blue-600 rounded-lg mr-4">
                     <info.icon size={20} className="text-white" />
                   </div>
                   <div>
-                    <h4 className={`font-medium ${
-                      darkMode ? 'text-white' : 'text-gray-900'
-                    }`}>
+                    <h4
+                      className={`font-medium ${
+                        darkMode ? "text-white" : "text-gray-900"
+                      }`}
+                    >
                       {info.title}
                     </h4>
-                    <p className={`${
-                      darkMode ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
+                    <p
+                      className={`${
+                        darkMode ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
                       {info.value}
                     </p>
                   </div>
                 </a>
               ))}
             </div>
-
-            <div>
-              <h4 className={`text-lg font-semibold mb-4 ${
-                darkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                Follow Me
-              </h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 rounded-lg transition-colors ${
-                      darkMode 
-                        ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' 
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    } ${social.color}`}
-                  >
-                    <social.icon size={20} />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
-          <div className={`p-8 rounded-lg shadow-lg ${
-            darkMode ? 'bg-gray-900 border border-gray-800' : 'bg-gray-50 border border-gray-200'
-          }`}>
-            <h3 className={`text-2xl font-semibold mb-6 ${
-              darkMode ? 'text-white' : 'text-black'
-            }`}>
+          <div
+            className={`p-8 rounded-lg shadow-lg ${
+              darkMode
+                ? "bg-gray-900 border border-gray-800"
+                : "bg-gray-50 border border-gray-200"
+            }`}
+          >
+            <h3
+              className={`text-2xl font-semibold mb-6 ${
+                darkMode ? "text-white" : "text-black"
+              }`}
+            >
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className={`block text-sm font-medium mb-2 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-700'
-                  }`}>
+                  <label
+                    className={`block text-sm font-medium mb-2 ${
+                      darkMode ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
                     Name
                   </label>
                   <input
@@ -183,17 +165,19 @@ export default function Contact({ darkMode }: ContactProps) {
                     onChange={handleChange}
                     required
                     className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      darkMode 
-                        ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                      darkMode
+                        ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     }`}
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className={`block text-sm font-medium mb-2 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-700'
-                  }`}>
+                  <label
+                    className={`block text-sm font-medium mb-2 ${
+                      darkMode ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
                     Email
                   </label>
                   <input
@@ -203,18 +187,20 @@ export default function Contact({ darkMode }: ContactProps) {
                     onChange={handleChange}
                     required
                     className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      darkMode 
-                        ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                      darkMode
+                        ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     }`}
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
               <div>
-                <label className={`block text-sm font-medium mb-2 ${
-                  darkMode ? 'text-gray-300' : 'text-gray-700'
-                }`}>
+                <label
+                  className={`block text-sm font-medium mb-2 ${
+                    darkMode ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
                   Subject
                 </label>
                 <input
@@ -222,19 +208,20 @@ export default function Contact({ darkMode }: ContactProps) {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  required
                   className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    darkMode 
-                      ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                    darkMode
+                      ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
+                      : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   }`}
                   placeholder="What's this about?"
                 />
               </div>
               <div>
-                <label className={`block text-sm font-medium mb-2 ${
-                  darkMode ? 'text-gray-300' : 'text-gray-700'
-                }`}>
+                <label
+                  className={`block text-sm font-medium mb-2 ${
+                    darkMode ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
                   Message
                 </label>
                 <textarea
@@ -244,15 +231,15 @@ export default function Contact({ darkMode }: ContactProps) {
                   required
                   rows={6}
                   className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none ${
-                    darkMode 
-                      ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                    darkMode
+                      ? "bg-gray-600 border-gray-500 text-white placeholder-gray-400"
+                      : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   }`}
                   placeholder="Tell me about your project or just say hello!"
                 ></textarea>
               </div>
               <button
-                href="mailto:kidusasrat10@gmail.com"
+                type="submit"
                 className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
               >
                 <Send size={20} />
