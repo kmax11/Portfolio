@@ -37,8 +37,8 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <a href="#home" className={`text-2xl font-bold ${
-              darkMode ? 'text-white' : 'text-black'
-            } hover:text-blue-600 transition-colors`}>
+              darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'
+            } transition-colors`}>
               
             </a>
           </div>
@@ -50,8 +50,10 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-600'
+                  className={`px-3 py-2 text-sm font-medium transition-colors ${
+                    darkMode
+                      ? 'text-gray-300 hover:text-white'
+                      : 'text-gray-600 hover:text-black'
                   }`}
                 >
                   {item.label}
@@ -99,8 +101,10 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-blue-600 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-600'
+                  className={`block px-3 py-2 text-base font-medium transition-colors ${
+                    darkMode
+                      ? 'text-gray-300 hover:text-white'
+                      : 'text-gray-600 hover:text-black'
                   }`}
                 >
                   {item.label}

@@ -30,9 +30,9 @@ export default function Hero({ darkMode }: HeroProps) {
         darkMode ? "bg-black" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between md:gap-16">
         {/* Left Side: Text Content */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
+        <div className="flex-1 min-w-0 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
           <h1
             className={`text-5xl md:text-7xl font-bold ${
               darkMode ? "text-white" : "text-black"
@@ -51,7 +51,13 @@ export default function Hero({ darkMode }: HeroProps) {
                 <span
                   key={currentRole}
                   className="animate-slideUp text-blue-500"
-                  style={{ display: "inline-block" }}
+                  style={
+                    {
+                      display: "inline-block",
+                      ["--tw-ch" as any]: roles[currentRole]?.length ?? 0,
+                      ["--tw-steps" as any]: roles[currentRole]?.length ?? 0,
+                    } as React.CSSProperties
+                  }
                 >
                   {roles[currentRole]}
                 </span>
@@ -130,22 +136,24 @@ export default function Hero({ darkMode }: HeroProps) {
           </div>
         </div>
         {/* Right Side: Profile Image */}
-        <div className="flex-1 flex items-center justify-center mt-12 md:mt-0 relative">
-          {/* Floating Particles with Different Colors */}
-          <div className="absolute w-[28rem] h-[28rem] pointer-events-none">
-            <span className="absolute top-10 left-24 w-4 h-4 bg-blue-400 rounded-full opacity-40 animate-float"></span>
-            <span className="absolute bottom-16 right-24 w-3 h-3 bg-pink-400 rounded-full opacity-30 animate-float-fast"></span>
-            <span className="absolute top-1/2 left-8 w-2 h-2 bg-yellow-300 rounded-full opacity-20 animate-float-slow"></span>
-            <span className="absolute top-20 right-16 w-5 h-5 bg-green-400 rounded-full opacity-30 animate-float"></span>
-            <span className="absolute bottom-24 left-16 w-3 h-3 bg-purple-400 rounded-full opacity-30 animate-float-fast"></span>
-            <span className="absolute top-32 left-1/2 w-4 h-4 bg-red-400 rounded-full opacity-30 animate-float-slow"></span>
+        <div className="flex-1 md:flex-none flex items-center justify-center md:justify-end mt-12 md:mt-0">
+          <div className="relative overflow-hidden w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 shrink-0">
+            {/* Floating Particles with Different Colors */}
+            <div className="absolute inset-0 pointer-events-none">
+              <span className="absolute top-10 left-24 w-4 h-4 bg-blue-400 rounded-full opacity-40 animate-float"></span>
+              <span className="absolute bottom-16 right-24 w-3 h-3 bg-pink-400 rounded-full opacity-30 animate-float-fast"></span>
+              <span className="absolute top-1/2 left-8 w-2 h-2 bg-yellow-300 rounded-full opacity-20 animate-float-slow"></span>
+              <span className="absolute top-20 right-16 w-5 h-5 bg-green-400 rounded-full opacity-30 animate-float"></span>
+              <span className="absolute bottom-24 left-16 w-3 h-3 bg-purple-400 rounded-full opacity-30 animate-float-fast"></span>
+              <span className="absolute top-32 left-1/2 w-4 h-4 bg-red-400 rounded-full opacity-30 animate-float-slow"></span>
+            </div>
+            <img
+              src="/20250623_113336.jpg"
+              alt="Profile"
+              className="w-full h-full rounded-full border-4 border-blue-300 object-cover shadow-xl relative z-10 transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              style={{ background: darkMode ? "#111" : "#fff" }}
+            />
           </div>
-          <img
-            src="/20250623_113336.jpg"
-            alt="Profile"
-            className="w-96 h-96 rounded-full border-4 border-blue-300 object-cover shadow-xl relative z-10 transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-            style={{ background: darkMode ? "#111" : "#fff" }}
-          />
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
