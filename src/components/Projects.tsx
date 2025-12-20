@@ -98,11 +98,7 @@ export default function Projects({ darkMode }: ProjectsProps) {
           >
             Featured Projects
           </h2>
-          <div
-            className={`w-24 h-1 mx-auto mb-4 ${
-              darkMode ? "bg-white" : "bg-black"
-            }`}
-          ></div>
+          <div className="gold-divider mx-auto mb-4"></div>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               darkMode ? "text-gray-300" : "text-gray-600"
@@ -136,10 +132,10 @@ export default function Projects({ darkMode }: ProjectsProps) {
                 />
                 <div className="absolute top-4 left-4">
                   <span
-                    className={`inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full ${
+                    className={`inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full border ${
                       darkMode
-                        ? "bg-black/80 text-gray-200"
-                        : "bg-white/80 text-gray-700"
+                        ? "bg-black/80 text-gray-200 gold-border"
+                        : "bg-white/80 text-gray-700 gold-border"
                     }`}
                   >
                     {getCategoryIcon(project.category)}
@@ -198,14 +194,14 @@ export default function Projects({ darkMode }: ProjectsProps) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-1 px-4 py-2 text-sm rounded-lg transition-colors border ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm rounded-lg transition-colors border gold-border ${
                         darkMode
-                          ? "border-gray-700 text-gray-200 hover:bg-gray-800"
-                          : "border-gray-300 text-gray-700 hover:bg-gray-100"
+                          ? "text-gray-200 hover:bg-black/20"
+                          : "text-gray-700 hover:bg-black/5"
                       }`}
                     >
-                      <ExternalLink size={16} />
-                      Live Demo
+                      <ExternalLink size={16} className="gold-text" />
+                      <span className="gold-text">Live Demo</span>
                     </a>
                   )}
                 </div>

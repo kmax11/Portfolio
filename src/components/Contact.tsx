@@ -81,13 +81,9 @@ export default function Contact({ darkMode }: ContactProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Get In Touch
+            Get In <span className="gold-text">Touch</span>
           </h2>
-          <div
-            className={`w-24 h-1 mx-auto mb-4 ${
-              darkMode ? "bg-white" : "bg-black"
-            }`}
-          ></div>
+          <div className="gold-divider mx-auto mb-4"></div>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               darkMode ? "text-gray-300" : "text-gray-600"

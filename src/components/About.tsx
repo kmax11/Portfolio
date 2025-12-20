@@ -45,11 +45,9 @@ export default function About({ darkMode }: AboutProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            About Me
+            About <span className="gold-text">Me</span>
           </h2>
-          <div
-            className={`w-24 h-1 mx-auto ${darkMode ? "bg-white" : "bg-black"}`}
-          ></div>
+          <div className="gold-divider mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">

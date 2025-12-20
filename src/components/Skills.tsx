@@ -53,13 +53,9 @@ export default function Skills({ darkMode }: SkillsProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Skills & Expertise
+            <span className="gold-text">Skills</span> & Expertise
           </h2>
-          <div
-            className={`w-24 h-1 mx-auto mb-4 ${
-              darkMode ? "bg-white" : "bg-black"
-            }`}
-          ></div>
+          <div className="gold-divider mx-auto mb-4"></div>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               darkMode ? "text-gray-300" : "text-gray-600"
@@ -82,15 +78,17 @@ export default function Skills({ darkMode }: SkillsProps) {
               }`}
             >
               <div className="flex justify-center mb-3">
-                <img
-                  src={`https://cdn.simpleicons.org/${skill.icon}/${
-                    darkMode ? "ffffff" : "000000"
-                  }`}
-                  alt={skill.name}
-                  width="40"
-                  height="40"
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
+                <div className="p-2 rounded-full border-2 gold-border">
+                  <img
+                    src={`https://cdn.simpleicons.org/${skill.icon}/${
+                      darkMode ? "ffffff" : "000000"
+                    }`}
+                    alt={skill.name}
+                    width="40"
+                    height="40"
+                    className="transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
               </div>
               <p
                 className={`text-sm font-medium ${

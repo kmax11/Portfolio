@@ -96,11 +96,9 @@ export default function Experience({ darkMode }: ExperienceProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Experience
+            <span className="gold-text">Experience</span>
           </h2>
-          <div
-            className={`w-24 h-1 mx-auto ${darkMode ? "bg-white" : "bg-black"}`}
-          ></div>
+          <div className="gold-divider mx-auto"></div>
         </div>
 
         <div className="relative">

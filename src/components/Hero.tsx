@@ -38,10 +38,7 @@ export default function Hero({ darkMode }: HeroProps) {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            Hi, I'm{" "}
-            <span className={darkMode ? "text-white" : "text-black"}>
-              Kidus
-            </span>
+            <span className="gold-text">Kidus Asrat</span>
           </h1>
           <div className="h-16 flex items-center justify-center md:justify-start">
             <p
@@ -72,11 +69,7 @@ export default function Hero({ darkMode }: HeroProps) {
           <div className="flex gap-4 mt-6">
             <a
               href="#contact"
-              className={`px-8 py-3 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 ${
-                darkMode
-                  ? "bg-white text-black hover:bg-gray-100"
-                  : "bg-black text-white hover:bg-gray-900"
-              }`}
+              className="btn-gold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Get In Touch
             </a>
@@ -185,7 +178,7 @@ export default function Hero({ darkMode }: HeroProps) {
             <img
               src="/20250623_113336.jpg"
               alt="Profile"
-              className={`w-full h-full rounded-full border-4 object-cover shadow-xl relative z-10 transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`w-full h-full rounded-full border-4 object-cover shadow-xl relative z-10 ${
                 darkMode ? "border-white/30" : "border-black/20"
               }`}
               style={{ background: darkMode ? "#111" : "#fff" }}
