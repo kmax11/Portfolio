@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail, ArrowUp, Twitter } from 'lucide-react';
+import { Linkedin, Mail, ArrowUp, Twitter, Github } from 'lucide-react';
 
 interface FooterProps {
   darkMode: boolean;
@@ -134,7 +134,7 @@ export default function Footer({ darkMode }: FooterProps) {
               <p className={`text-sm ${
                 darkMode ? 'text-gray-400' : 'text-gray-600'
               }`}>
-                Ethiopia
+                Addis Ababa, Ethiopia
               </p>
             </div>
           </div>

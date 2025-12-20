@@ -49,11 +49,11 @@
   }
   
   .btn-primary {
-    @apply px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    @apply px-8 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-colors;
+    @apply px-8 py-3 border-2 border-black text-black rounded-lg font-medium hover:bg-black hover:text-white transition-colors;
   }
   
   .card {
@@ -61,7 +61,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    @apply text-black;
   }
 }
 
@@ -84,7 +84,9 @@
   }
 
   .animate-slideUp {
-    animation: typing 2.5s steps(90, end) forwards, blink 0.8s step-end infinite;
+    --tw-ch: 20;
+    --tw-steps: 20;
+    animation: typing 2.5s steps(var(--tw-steps), end) forwards, blink 0.8s step-end infinite;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid currentColor;
@@ -118,7 +120,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+  @apply outline-none ring-2 ring-gray-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
 }
 
 /* Animation keyframes */
@@ -160,7 +162,7 @@ textarea:focus-visible {
     width: 0ch;
   }
   to {
-    width: 25ch;
+    width: calc(var(--tw-ch) * 1ch);
   }
 }
 
