@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
@@ -48,7 +47,7 @@ function App() {
       <main>
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
-        <Experience darkMode={darkMode} />
+        {/* <Experience darkMode={darkMode} /> */}
         <Projects darkMode={darkMode} />
         <Skills darkMode={darkMode} />
         <Contact darkMode={darkMode} />

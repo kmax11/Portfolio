@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Send, Github } from "lucide-react";
+import { MapPin, Send, Github, Phone } from "lucide-react";
 
 interface ContactProps {
   darkMode: boolean;
@@ -50,10 +50,11 @@ export default function Contact({ darkMode }: ContactProps) {
 
   const contactInfo = [
     {
-      icon: Mail,
-      title: "Email",
-      value: "kidusasrat10@gmail.com",
-      link: "mailto:kidusasrat10@gmail.com",
+      icon: Phone ,
+      
+      title: "Call Me",
+      value: "+251 961463044",
+      link: "tel:+251961463044",
     },
     {
       icon: Github,
