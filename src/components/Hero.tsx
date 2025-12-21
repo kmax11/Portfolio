@@ -56,9 +56,9 @@ export default function Hero({ darkMode }: HeroProps) {
                   style={
                     {
                       display: "inline-block",
-                      ["--tw-ch" as any]: roles[currentRole]?.length ?? 0,
-                      ["--tw-steps" as any]: roles[currentRole]?.length ?? 0,
-                    } as React.CSSProperties
+                      "--tw-ch": roles[currentRole]?.length ?? 0,
+                      "--tw-steps": roles[currentRole]?.length ?? 0,
+                    } as React.CSSProperties & { [key: `--${string}`]: string | number }
                   }
                 >
                   {roles[currentRole]}
