@@ -41,12 +41,29 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
           <div className="flex-shrink-0">
             <a
               href="#home"
-              className={`text-2xl font-bold ${
+              className={`flex items-center gap-2 text-lg font-semibold ${
                 darkMode
-                  ? "text-white hover:text-gray-300"
-                  : "text-black hover:text-gray-700"
+                  ? "text-white hover:text-gray-200"
+                  : "text-black hover:text-gray-800"
               } transition-colors`}
-            ></a>
+            >
+              <span
+                className={`inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm ${
+                  darkMode
+                    ? "border-amber-300 bg-black"
+                    : "border-amber-500 bg-white"
+                }`}
+              >
+                <img
+                  src="/ka-mark.svg"
+                  alt="Kidus Asrat logo"
+                  className="h-6 w-6"
+                />
+              </span>
+              <span className="hidden sm:inline tracking-tight">
+                Kidus Asrat
+              </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

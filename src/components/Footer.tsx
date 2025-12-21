@@ -24,13 +24,16 @@ export default function Footer({ darkMode }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3
-              className={`text-2xl font-bold ${
-                darkMode ? "text-white" : "text-black"
-              }`}
-            >
-              Portfolio
-            </h3>
+            <div className="flex items-center gap-3">
+              
+              <span
+                className={`text-2xl font-bold ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Kidus Asrat
+              </span>
+            </div>
             <p
               className={`text-sm ${
                 darkMode ? "text-gray-400" : "text-gray-600"
@@ -102,7 +105,6 @@ export default function Footer({ darkMode }: FooterProps) {
               {[
                 { href: "#home", label: "Home" },
                 { href: "#about", label: "About" },
-                { href: "#experience", label: "Experience" },
                 { href: "#projects", label: "Projects" },
                 { href: "#skills", label: "Skills" },
                 { href: "#contact", label: "Contact" },
