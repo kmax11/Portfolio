@@ -9,7 +9,6 @@ export default function Skills({ darkMode }: SkillsProps) {
     // Frontend
     { name: "React", icon: "react", category: "Frontend" },
     { name: "HTML5", icon: "html5", category: "Frontend" },
-    { name: "CSS3", icon: "css3", category: "Frontend" },
     { name: "Bootstrap", icon: "bootstrap", category: "Frontend" },
     { name: "Tailwind CSS", icon: "tailwindcss", category: "Frontend" },
     { name: "JavaScript", icon: "javascript", category: "Frontend" },
@@ -34,11 +33,12 @@ export default function Skills({ darkMode }: SkillsProps) {
 
     // Tools
     { name: "Git", icon: "git", category: "Others" },
+    { name: "Docker", icon: "docker", category: "Others" },
+    { name: "Selenium", icon: "selenium", category: "Others" },
     { name: "GitHub", icon: "github", category: "Others" },
     { name: "Flutter", icon: "flutter", category: "Others" },
     { name: "Figma", icon: "figma", category: "Others" },
     { name: "Postman", icon: "postman", category: "Others" },
-    { name: "VS Code", icon: "visualstudiocode", category: "Others" },
   ];
 
   return (

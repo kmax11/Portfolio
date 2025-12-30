@@ -1,4 +1,3 @@
-import React from "react";
 import { Linkedin, Mail, ArrowUp, Twitter, Github } from "lucide-react";
 
 interface FooterProps {
@@ -21,11 +20,10 @@ export default function Footer({ darkMode }: FooterProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              
               <span
                 className={`text-2xl font-bold ${
                   darkMode ? "text-white" : "text-black"
@@ -93,7 +91,7 @@ export default function Footer({ darkMode }: FooterProps) {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:justify-self-end">
             <h4
               className={`text-lg font-semibold ${
                 darkMode ? "text-white" : "text-black"
@@ -101,7 +99,7 @@ export default function Footer({ darkMode }: FooterProps) {
             >
               Quick Links
             </h4>
-            <nav className="space-y-2">
+            <nav className="space-y-2 text-left">
               {[
                 { href: "#home", label: "Home" },
                 { href: "#about", label: "About" },
@@ -122,43 +120,6 @@ export default function Footer({ darkMode }: FooterProps) {
                 </a>
               ))}
             </nav>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4
-              className={`text-lg font-semibold ${
-                darkMode ? "text-white" : "text-black"
-              }`}
-            >
-              Get In Touch
-            </h4>
-            <div className="space-y-2">
-              <p
-                className={`text-sm ${
-                  darkMode ? "text-gray-400" : "text-gray-600"
-                }`}
-              >
-                Ready to work together?
-              </p>
-              <a
-                href="mailto:kidusasrat10@gmail.com"
-                className={`text-sm transition-colors ${
-                  darkMode
-                    ? "text-gray-200 hover:text-white"
-                    : "text-gray-900 hover:text-black"
-                }`}
-              >
-                kidusasrat10@gmail.com
-              </a>
-              <p
-                className={`text-sm ${
-                  darkMode ? "text-gray-400" : "text-gray-600"
-                }`}
-              >
-                Addis Ababa, Ethiopia
-              </p>
-            </div>
           </div>
         </div>
 
